@@ -305,22 +305,20 @@
 
     <div class="project-card" onclick="toggleCard(this)">
       <div class="project-header">
-        <h3>MOZA FFB Controller</h3>
+        <h3>Systems and Methods for Aircraft-Profile-Based Force-Feedback Control for Simulated Rotary-Wing Aircraft- Patent Pending </h3>
         <svg class="chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
       </div>
-      <p class="project-summary">Force feedback integration for MSFS 2024 / HPG H145 helicopter with MOZA AB6 base.</p>
+      <p class="project-summary">While evaluating a force feedback joystick, I identified an unsolved problem in the flight simulation community: no universal method existed for implementing force-trim and autopilot logic for helicopter controls. I researched real-world helicopter autopilot and trim system documentation, then designed and built a C# application by collaborating with AI tooling. It bridges simulator telemetry to force feedback hardware.</p>
       <div class="project-tags">
         <span class="tag">C#</span>
-        <span class="tag">DirectInput</span>
         <span class="tag">SimConnect</span>
+        <span class="tag">AI</span>
       </div>
       <div class="project-detail">
         <div class="project-detail-inner">
-          <p>Bridges MSFS 2024 helicopter telemetry to a MOZA AB6 force feedback base by writing computed H145 LVar values directly into MOZA's shared memory block, letting MOZA Cockpit's native Telemetry FFB mode handle spring physics.</p>
+          <p>Bridges almost any helicopter telemetry data from simulators to force feedbase joystick bases.</p>
           <ul>
-            <li>Reads H145 cyclic center, trim release, and freeze LVars via SimConnect</li>
-            <li>Patches Qt 5.15 shared memory sections with computed telemetry</li>
-            <li>Implements trim release latch with captured stick position at button-release</li>
+            <li>Capable of reading autopilot inputs, trim inputs, and correct force trim release logic</li>
           </ul>
           <div class="project-links">
             <a class="project-link" href="https://github.com/martinharasimowicz" target="_blank" onclick="event.stopPropagation()">
@@ -334,17 +332,17 @@
 
     <div class="project-card" onclick="toggleCard(this)">
       <div class="project-header">
-        <h3>Project Name</h3>
+        <h3>PC 90 Jet Engine Turbofan Case </h3>
         <svg class="chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
       </div>
-      <p class="project-summary">Brief description of what this project does and why it's interesting.</p>
+      <p class="project-summary"> A fully 3D-printable small form factor PC case modeled after the GE-90 turbofan jet engine.</p>
       <div class="project-tags">
         <span class="tag">Tag</span>
         <span class="tag">Tag</span>
       </div>
       <div class="project-detail">
         <div class="project-detail-inner">
-          <p>Longer explanation — what problem it solves, how it works, what you learned.</p>
+          <p>The build features a 200mm fan housed in a cowling proportionally scaled to the real engine's bypass ratio and diameter. Cooling is handled by a custom external liquid cooling loop with dual 280mm radiators, mounted behind printable covers designed to resemble airport blast fences. Design and engineering challenges in Fusion 360 were solved through a combination of AI tooling, independent research, and domain knowledge from building open-source 3D Printers. </p>
           <div class="project-links">
             <a class="project-link" href="#" target="_blank" onclick="event.stopPropagation()">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.1.82-.26.82-.58v-2.16c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 011.84 1.24 2.56 2.56 0 003.5 1 2.56 2.56 0 01.76-1.6c-2.67-.3-5.47-1.33-5.47-5.93a4.64 4.64 0 011.24-3.22 4.3 4.3 0 01.12-3.18s1-.33 3.3 1.23a11.38 11.38 0 016 0c2.3-1.56 3.3-1.23 3.3-1.23a4.3 4.3 0 01.12 3.18 4.64 4.64 0 011.24 3.22c0 4.61-2.81 5.63-5.48 5.92a2.86 2.86 0 01.82 2.22v3.29c0 .32.22.7.82.58A12 12 0 0012 .3z"/></svg>
@@ -361,17 +359,17 @@
 
     <div class="project-card" onclick="toggleCard(this)">
       <div class="project-header">
-        <h3>Project Name</h3>
+        <h3>ExecOps AI</h3>
         <svg class="chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
       </div>
-      <p class="project-summary">Brief description of what this project does and why it's interesting.</p>
+      <p class="project-summary"> An AI-powered private jet dispatch system to help simulator pilots figure out where to fly .</p>
       <div class="project-tags">
         <span class="tag">Tag</span>
         <span class="tag">Tag</span>
       </div>
       <div class="project-detail">
         <div class="project-detail-inner">
-          <p>Longer explanation — what problem it solves, how it works, what you learned.</p>
+          <p> Built an MVP in the form of a lightweight web-app and created alongside a business and licensing plan. It creates random schedules, routes, and "characters" for pilots to transport based on pre-defined criteria like terrain, hazardous weather, and flight length. Mission briefings can be played back as a phone call.</p>
           <div class="project-links">
             <a class="project-link" href="#" target="_blank" onclick="event.stopPropagation()">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.1.82-.26.82-.58v-2.16c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 011.84 1.24 2.56 2.56 0 003.5 1 2.56 2.56 0 01.76-1.6c-2.67-.3-5.47-1.33-5.47-5.93a4.64 4.64 0 011.24-3.22 4.3 4.3 0 01.12-3.18s1-.33 3.3 1.23a11.38 11.38 0 016 0c2.3-1.56 3.3-1.23 3.3-1.23a4.3 4.3 0 01.12 3.18 4.64 4.64 0 011.24 3.22c0 4.61-2.81 5.63-5.48 5.92a2.86 2.86 0 01.82 2.22v3.29c0 .32.22.7.82.58A12 12 0 0012 .3z"/></svg>
@@ -384,17 +382,17 @@
 
     <div class="project-card" onclick="toggleCard(this)">
       <div class="project-header">
-        <h3>Project Name</h3>
+        <h3>Published Technical Reviews </h3>
         <svg class="chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
       </div>
-      <p class="project-summary">Brief description of what this project does and why it's interesting.</p>
+      <p class="project-summary">I reviewed force-feedback joystick hardware for FSElite, the largest online flight simulation news outlet .</p>
       <div class="project-tags">
         <span class="tag">Tag</span>
         <span class="tag">Tag</span>
       </div>
       <div class="project-detail">
         <div class="project-detail-inner">
-          <p>Longer explanation — what problem it solves, how it works, what you learned.</p>
+          <p>Authored an in-depth review of the MOZA AB6 force feedback joystick for FSElite, covering build quality, software integration, and force feedback performance across multiple simulator titles. The review drew on hands-on experience with the hardware and a deep understanding of how MOZA's telemetry-based FFB pipeline translates sim data into motor commands.</p>
           <div class="project-links">
             <a class="project-link" href="#" target="_blank" onclick="event.stopPropagation()">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.38c.6.1.82-.26.82-.58v-2.16c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 011.84 1.24 2.56 2.56 0 003.5 1 2.56 2.56 0 01.76-1.6c-2.67-.3-5.47-1.33-5.47-5.93a4.64 4.64 0 011.24-3.22 4.3 4.3 0 01.12-3.18s1-.33 3.3 1.23a11.38 11.38 0 016 0c2.3-1.56 3.3-1.23 3.3-1.23a4.3 4.3 0 01.12 3.18 4.64 4.64 0 011.24 3.22c0 4.61-2.81 5.63-5.48 5.92a2.86 2.86 0 01.82 2.22v3.29c0 .32.22.7.82.58A12 12 0 0012 .3z"/></svg>
