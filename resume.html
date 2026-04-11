@@ -30,7 +30,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       backdrop-filter: blur(16px);
@@ -55,7 +54,6 @@
     }
     nav .links a:hover { color: var(--accent); }
 
-    /* ── RESUME LAYOUT ── */
     .resume-page {
       max-width: 900px; margin: 0 auto;
       padding: 7rem 2rem 3rem;
@@ -79,7 +77,7 @@
     .resume-summary {
       margin: 1.5rem 0 2.5rem;
       font-size: .95rem; color: var(--text-secondary);
-      max-width: 700px; line-height: 1.7;
+      line-height: 1.7;
     }
 
     hr.divider {
@@ -87,13 +85,11 @@
       margin: 2.5rem 0;
     }
 
-    /* ── SECTION HEADERS ── */
     .section-label {
       font-size: .7rem; font-weight: 600; text-transform: uppercase;
       letter-spacing: .12em; color: var(--accent); margin-bottom: 1.25rem;
     }
 
-    /* ── EXPERIENCE / EDUCATION CARDS ── */
     .resume-items { display: flex; flex-direction: column; gap: 1.25rem; }
     .resume-card {
       background: var(--surface);
@@ -103,45 +99,49 @@
     }
     .resume-card-header {
       display: flex; align-items: flex-start; justify-content: space-between;
-      margin-bottom: .6rem; gap: 1rem;
+      margin-bottom: .4rem; gap: 1rem;
     }
     .resume-card-header h3 {
       font-size: 1.05rem; font-weight: 700;
     }
     .resume-card-header .date {
-      font-size: .8rem; font-weight: 500; color: var(--accent);
+      font-size: .75rem; font-weight: 600; color: var(--accent);
       white-space: nowrap; flex-shrink: 0;
       background: var(--accent-light);
       padding: .2rem .65rem; border-radius: 100px;
     }
     .resume-card .company {
       font-size: .875rem; font-weight: 600; color: var(--text-secondary);
-      margin-bottom: .6rem;
+      margin-bottom: .15rem;
     }
     .resume-card .location {
       font-size: .8rem; color: var(--text-secondary);
-      font-style: italic; margin-bottom: .6rem;
+      font-style: italic; margin-bottom: .75rem;
     }
     .resume-card ul {
       padding-left: 1.15rem;
       font-size: .875rem; color: var(--text-secondary); line-height: 1.65;
     }
-    .resume-card ul li { margin-bottom: .3rem; }
+    .resume-card ul li { margin-bottom: .35rem; }
     .resume-card p.desc {
       font-size: .875rem; color: var(--text-secondary); line-height: 1.6;
     }
 
-    /* ── SKILLS GRID ── */
+    .competency-group { margin-bottom: 1rem; }
+    .competency-group:last-child { margin-bottom: 0; }
+    .competency-label {
+      font-size: .75rem; font-weight: 600; color: var(--text);
+      margin-bottom: .45rem;
+    }
     .skills-row {
       display: flex; flex-wrap: wrap; gap: .5rem;
     }
     .skill-tag {
-      font-size: .75rem; font-weight: 600; letter-spacing: .03em;
-      padding: .3rem .75rem; border-radius: 100px;
+      font-size: .7rem; font-weight: 600; letter-spacing: .03em;
+      padding: .25rem .65rem; border-radius: 100px;
       background: var(--accent-light); color: var(--accent);
     }
 
-    /* ── PRINT BUTTON ── */
     .btn {
       display: inline-flex; align-items: center; gap: .45rem;
       padding: .6rem 1.25rem;
@@ -153,7 +153,6 @@
     .btn:hover { background: #234A30; }
     .btn svg { width: 15px; height: 15px; }
 
-    /* ── FOOTER ── */
     footer {
       max-width: 900px; margin: 0 auto;
       padding: 3rem 2rem;
@@ -195,9 +194,9 @@
   <div class="resume-header">
     <h1>Martin Harasimowicz</h1>
     <div class="resume-contact">
-      Houston, TX<br>
-      <a href="mailto:your@email.com">your@email.com</a><br>
-      <a href="https://github.com/martinharasimowicz">github.com/martinharasimowicz</a>
+      <a href="mailto:martinharasimowicz@icloud.com">martinharasimowicz@icloud.com</a><br>
+      224-605-1657<br>
+      <a href="https://linkedin.com/in/martinharasimowicz">linkedin.com/in/martinharasimowicz</a>
     </div>
   </div>
 
@@ -209,51 +208,154 @@
   </div>
 
   <p class="resume-summary">
-    Product-minded builder with experience across software, partnerships, and technical problem solving. Focus on turning complex ideas into practical, user-facing products spanning web applications, AI tools, simulation, and hardware-oriented projects.
+    Commercial strategist with six years of frontline experience building go-to-market operations at high-growth and early-stage technology companies. Background spans market intelligence, financial data analysis, revenue forecasting, and competitive positioning—complemented by published analytical writing in aviation and aerospace hardware. Seeking strategy, research, or commercial analysis roles in aviation, aerospace, and defense.
   </p>
 
-  <!-- ── EXPERIENCE ── -->
-  <div class="section-label">Experience</div>
+  <!-- ── CORE COMPETENCIES ── -->
+  <div class="section-label">Core Competencies</div>
+  <div class="resume-card" style="margin-bottom: 2.5rem;">
+    <div class="competency-group">
+      <div class="competency-label">Strategy & Analysis</div>
+      <div class="skills-row">
+        <span class="skill-tag">Market Sizing</span>
+        <span class="skill-tag">Competitive Intelligence</span>
+        <span class="skill-tag">Buyer Segmentation</span>
+        <span class="skill-tag">Revenue Forecasting</span>
+        <span class="skill-tag">Deal Progression Analysis</span>
+        <span class="skill-tag">Sector-Specific Research</span>
+        <span class="skill-tag">Board & Executive Reporting</span>
+      </div>
+    </div>
+    <div class="competency-group">
+      <div class="competency-label">Commercial Operations</div>
+      <div class="skills-row">
+        <span class="skill-tag">Go-to-Market Strategy</span>
+        <span class="skill-tag">ICP & TAM Frameworks</span>
+        <span class="skill-tag">Pipeline Architecture</span>
+        <span class="skill-tag">CRM Design (Salesforce, HubSpot)</span>
+        <span class="skill-tag">Account-Based Strategy</span>
+      </div>
+    </div>
+    <div class="competency-group">
+      <div class="competency-label">Tools & Methods</div>
+      <div class="skills-row">
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Excel & Google Sheets</span>
+        <span class="skill-tag">Salesforce</span>
+        <span class="skill-tag">Outreach</span>
+        <span class="skill-tag">ZoomInfo</span>
+        <span class="skill-tag">Zapier</span>
+        <span class="skill-tag">Financial Modeling</span>
+        <span class="skill-tag">Data Visualization</span>
+      </div>
+    </div>
+    <div class="competency-group">
+      <div class="competency-label">Domain Knowledge</div>
+      <div class="skills-row">
+        <span class="skill-tag">Aviation Hardware & Systems</span>
+        <span class="skill-tag">Flight Simulation Technology</span>
+        <span class="skill-tag">Private Equity & Alternative Investments</span>
+        <span class="skill-tag">SaaS & Enterprise Software</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PUBLISHED ANALYTICAL WORK ── -->
+  <div class="section-label">Published Analytical Work</div>
+  <div class="resume-items">
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <h3>Content Writer — Hardware Analysis & Reviews</h3>
+        <span class="date">2025 — Present</span>
+      </div>
+      <div class="company">FSElite</div>
+      <div class="location">Remote</div>
+      <ul>
+        <li>Author in-depth technical evaluations of aviation simulation hardware for one of the flight simulation industry's leading publications, covering product architecture, competitive positioning, and market impact</li>
+        <li>Published comprehensive analysis of the Moza AB6 force feedback joystick and MTQ throttle quadrant, evaluating engineering tradeoffs, software integration, and price-performance positioning across the competitive landscape</li>
+        <li>Translate complex hardware and software engineering concepts into accessible, analytically rigorous long-form content for a technically sophisticated audience</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── PROFESSIONAL EXPERIENCE ── -->
+  <div class="section-label">Professional Experience</div>
   <div class="resume-items">
 
     <div class="resume-card">
       <div class="resume-card-header">
-        <h3>Job Title</h3>
-        <span class="date">2023 — Present</span>
+        <h3>Independent Strategic Consultant</h3>
+        <span class="date">Jan 2023 — Present</span>
       </div>
-      <div class="company">Company Name</div>
-      <div class="location">Houston, TX</div>
+      <div class="company">Self-Employed</div>
+      <div class="location">Chicago, IL</div>
       <ul>
-        <li>Describe what you did and the impact it had</li>
-        <li>Use metrics where possible — percentages, revenue, users</li>
-        <li>Keep each bullet to one line if you can</li>
+        <li>Embedded strategy and operations advisor to two private companies across healthcare and transportation</li>
+        <li>Built financial tracking models, AR dashboards, reconciliation workflows, and profitability reporting systems for a private healthcare practice, creating cash-flow visibility that directly informed strategic planning and tax compliance</li>
+        <li>Designed data workflows translating manual billing processes into structured financial pipelines supporting budgeting and long-range forecasting</li>
+        <li>Serve as embedded commercial strategy partner to the CEO of a private transportation firm, developing B2B market entry strategies, customer segmentation frameworks, and revenue forecasting structures</li>
       </ul>
     </div>
 
     <div class="resume-card">
       <div class="resume-card-header">
-        <h3>Job Title</h3>
-        <span class="date">2021 — 2023</span>
+        <h3>Senior Account Manager — GTM Strategy & Commercial Operations</h3>
+        <span class="date">Jun 2022 — Dec 2022</span>
       </div>
-      <div class="company">Company Name</div>
-      <div class="location">City, ST</div>
+      <div class="company">StageConnect</div>
+      <div class="location">San Francisco, CA</div>
       <ul>
-        <li>Describe what you did and the impact it had</li>
-        <li>Use metrics where possible</li>
-        <li>Keep it concise</li>
+        <li>Designed and launched the company's first structured go-to-market strategy, transitioning from founder-led sales to a data-driven qualification and prioritization engine</li>
+        <li>Built lead-scoring models and buyer segmentation frameworks across 20,000+ accounts, identifying high-conversion segments and informing product positioning</li>
+        <li>Developed revenue forecasting models and board-level reporting dashboards used for headcount planning, budget projections, and fundraising strategy</li>
+        <li>Generated $1.2M in qualified pipeline in six months while establishing the repeatable commercial processes and analytical infrastructure underlying that growth</li>
       </ul>
     </div>
 
     <div class="resume-card">
       <div class="resume-card-header">
-        <h3>Job Title</h3>
-        <span class="date">2019 — 2021</span>
+        <h3>Associate, Market Intelligence & Business Development</h3>
+        <span class="date">Apr 2021 — May 2022</span>
       </div>
-      <div class="company">Company Name</div>
-      <div class="location">City, ST</div>
+      <div class="company">Preqin</div>
+      <div class="location">San Francisco, CA</div>
       <ul>
-        <li>Describe what you did and the impact it had</li>
-        <li>Use metrics where possible</li>
+        <li>Managed strategic commercial programming for 30–40 institutional client accounts, aligning outreach with proprietary market intelligence on investor mandates, fund performance, and deal flow</li>
+        <li>Analyzed deal progression metrics and buyer segmentation patterns to optimize positioning strategies, driving a 10% increase in conversion rates and 108% annual quota attainment</li>
+        <li>Developed sector-specific market theses and competitive positioning frameworks for mid-market private equity, translating Preqin's data assets into advisory-level client conversations</li>
+        <li>Exceeded onboarding targets by 200% through customized research-backed outreach mapped to each prospect's investment strategy and portfolio gaps</li>
+      </ul>
+    </div>
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <h3>Head of Growth — Commercial Strategy & Infrastructure</h3>
+        <span class="date">Jun 2020 — Feb 2021</span>
+      </div>
+      <div class="company">BoostUp.ai</div>
+      <div class="location">Santa Clara, CA</div>
+      <ul>
+        <li>Authored the company's first ICP framework, total addressable market analysis, GTM experiment roadmap, and executive reporting structure during seed-stage scaling</li>
+        <li>Built commercial infrastructure from zero—Salesforce, Outreach, ZoomInfo architecture—creating real-time pipeline visibility, attribution tracking, and forecasting dashboards</li>
+        <li>Generated $4.4M in qualified pipeline by translating market research into targeted outbound strategy and segmentation models</li>
+        <li>Partnered cross-functionally with leadership, product, and engineering to unify messaging, competitive positioning, and growth strategy</li>
+      </ul>
+    </div>
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <h3>Business Development Team Lead</h3>
+        <span class="date">Apr 2019 — Jun 2020</span>
+      </div>
+      <div class="company">Darktrace</div>
+      <div class="location">San Francisco, CA</div>
+      <ul>
+        <li>Led a five-person team driving Canadian market expansion for a cybersecurity AI platform, developing enablement systems, qualification frameworks, and structured KPI reviews</li>
+        <li>Increased qualified pipeline by 300% through systematic analysis of outreach effectiveness and iterative refinement of targeting criteria</li>
+        <li>Sourced $1.2M in closed business in a single quarter, reporting directly to CEO/CRO with market intelligence that informed national sales strategy</li>
+        <li>Designed tracking and feedback systems that improved consistency and predictability in a 98% cold-outreach environment</li>
       </ul>
     </div>
 
@@ -264,65 +366,12 @@
   <!-- ── EDUCATION ── -->
   <div class="section-label">Education</div>
   <div class="resume-items">
-
     <div class="resume-card">
       <div class="resume-card-header">
-        <h3>Degree — Major</h3>
-        <span class="date">2015 — 2019</span>
+        <h3>Bachelor of Arts, Political Science</h3>
       </div>
-      <div class="company">University Name</div>
-      <div class="location">City, ST</div>
-      <p class="desc">Relevant coursework, honors, activities, or anything else worth noting.</p>
+      <div class="company">University of California, Berkeley</div>
     </div>
-
-  </div>
-
-  <hr class="divider">
-
-  <!-- ── PROJECTS ── -->
-  <div class="section-label">Notable Projects</div>
-  <div class="resume-items">
-
-    <div class="resume-card">
-      <div class="resume-card-header">
-        <h3>Force Feedback Controller — Patent Pending</h3>
-      </div>
-      <p class="desc">Designed and built a C# application bridging MSFS 2024 helicopter telemetry to force feedback hardware. Identified an unsolved problem in the flight simulation community and developed a universal method for helicopter force-trim and autopilot control logic.</p>
-    </div>
-
-    <div class="resume-card">
-      <div class="resume-card-header">
-        <h3>PC 90 Jet Engine Turbofan Case</h3>
-      </div>
-      <p class="desc">Engineered a fully 3D-printable small form factor PC case modeled after the GE-90 turbofan, featuring a 200mm fan cowling scaled to the real engine's bypass ratio and a custom external liquid cooling loop with dual 280mm radiators.</p>
-    </div>
-
-    <div class="resume-card">
-      <div class="resume-card-header">
-        <h3>ExecOps AI</h3>
-      </div>
-      <p class="desc">Built an MVP web app for AI-powered private jet dispatch in flight simulators. Creates randomized schedules, routes, and characters based on terrain, weather, and flight length criteria with audio mission briefing playback.</p>
-    </div>
-
-  </div>
-
-  <hr class="divider">
-
-  <!-- ── SKILLS ── -->
-  <div class="section-label">Skills</div>
-  <div class="skills-row">
-    <span class="skill-tag">C#</span>
-    <span class="skill-tag">Python</span>
-    <span class="skill-tag">HTML / CSS / JS</span>
-    <span class="skill-tag">SQL</span>
-    <span class="skill-tag">Git</span>
-    <span class="skill-tag">Fusion 360</span>
-    <span class="skill-tag">SimConnect</span>
-    <span class="skill-tag">AI Tooling</span>
-    <span class="skill-tag">3D Printing</span>
-    <span class="skill-tag">Product Development</span>
-    <span class="skill-tag">Business Strategy</span>
-    <span class="skill-tag">Flight Simulation</span>
   </div>
 
 </main>
