@@ -15,6 +15,7 @@
       --text: #1A1A1A;
       --text-secondary: #5C5C5C;
       --accent: #2D5A3D;
+      --accent-light: #E8F0EB;
       --border: #E4E2DD;
       --radius: 10px;
     }
@@ -29,6 +30,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       backdrop-filter: blur(16px);
@@ -53,54 +55,105 @@
     }
     nav .links a:hover { color: var(--accent); }
 
+    /* ── RESUME LAYOUT ── */
     .resume-page {
       max-width: 900px; margin: 0 auto;
       padding: 7rem 2rem 3rem;
     }
-
     .resume-header {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: .5rem; flex-wrap: wrap; gap: 1rem;
     }
     .resume-header h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.75rem; letter-spacing: -.01em;
+      font-size: 2.2rem; letter-spacing: -.02em;
     }
+    .resume-contact {
+      font-size: .85rem; color: var(--text-secondary);
+      text-align: right; line-height: 1.6;
+    }
+    .resume-contact a {
+      color: var(--accent); text-decoration: none;
+    }
+    .resume-contact a:hover { text-decoration: underline; }
+    .resume-summary {
+      margin: 1.5rem 0 2.5rem;
+      font-size: .95rem; color: var(--text-secondary);
+      max-width: 700px; line-height: 1.7;
+    }
+
+    hr.divider {
+      border: none; height: 1px; background: var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* ── SECTION HEADERS ── */
+    .section-label {
+      font-size: .7rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .12em; color: var(--accent); margin-bottom: 1.25rem;
+    }
+
+    /* ── EXPERIENCE / EDUCATION CARDS ── */
+    .resume-items { display: flex; flex-direction: column; gap: 1.25rem; }
+    .resume-card {
+      background: var(--surface);
+      border: 1.5px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+    }
+    .resume-card-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-bottom: .6rem; gap: 1rem;
+    }
+    .resume-card-header h3 {
+      font-size: 1.05rem; font-weight: 700;
+    }
+    .resume-card-header .date {
+      font-size: .8rem; font-weight: 500; color: var(--accent);
+      white-space: nowrap; flex-shrink: 0;
+      background: var(--accent-light);
+      padding: .2rem .65rem; border-radius: 100px;
+    }
+    .resume-card .company {
+      font-size: .875rem; font-weight: 600; color: var(--text-secondary);
+      margin-bottom: .6rem;
+    }
+    .resume-card .location {
+      font-size: .8rem; color: var(--text-secondary);
+      font-style: italic; margin-bottom: .6rem;
+    }
+    .resume-card ul {
+      padding-left: 1.15rem;
+      font-size: .875rem; color: var(--text-secondary); line-height: 1.65;
+    }
+    .resume-card ul li { margin-bottom: .3rem; }
+    .resume-card p.desc {
+      font-size: .875rem; color: var(--text-secondary); line-height: 1.6;
+    }
+
+    /* ── SKILLS GRID ── */
+    .skills-row {
+      display: flex; flex-wrap: wrap; gap: .5rem;
+    }
+    .skill-tag {
+      font-size: .75rem; font-weight: 600; letter-spacing: .03em;
+      padding: .3rem .75rem; border-radius: 100px;
+      background: var(--accent-light); color: var(--accent);
+    }
+
+    /* ── PRINT BUTTON ── */
     .btn {
       display: inline-flex; align-items: center; gap: .45rem;
-      padding: .7rem 1.5rem;
-      font-size: .875rem; font-weight: 600; font-family: inherit;
+      padding: .6rem 1.25rem;
+      font-size: .8rem; font-weight: 600; font-family: inherit;
       border-radius: var(--radius); text-decoration: none;
-      transition: all .2s;
-      cursor: pointer; border: none;
+      transition: all .2s; cursor: pointer; border: none;
       background: var(--accent); color: #fff;
     }
     .btn:hover { background: #234A30; }
-    .btn svg { width: 16px; height: 16px; }
+    .btn svg { width: 15px; height: 15px; }
 
-    .pdf-container {
-      width: 100%;
-      aspect-ratio: 8.5 / 11;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--surface);
-    }
-    .pdf-container iframe {
-      width: 100%; height: 100%; border: none;
-    }
-
-    .pdf-fallback {
-      display: none;
-      text-align: center;
-      padding: 4rem 2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      color: var(--text-secondary);
-    }
-    .pdf-fallback p { margin-bottom: 1.5rem; }
-
+    /* ── FOOTER ── */
     footer {
       max-width: 900px; margin: 0 auto;
       padding: 3rem 2rem;
@@ -108,10 +161,18 @@
       font-size: .8rem; color: var(--text-secondary);
       text-align: center;
     }
+    footer a { color: var(--accent); text-decoration: none; }
 
     @media (max-width: 700px) {
-      .pdf-container { display: none; }
-      .pdf-fallback { display: block; }
+      .resume-header { flex-direction: column; align-items: flex-start; }
+      .resume-contact { text-align: left; }
+      .resume-card-header { flex-direction: column; gap: .35rem; }
+    }
+
+    @media print {
+      nav, .btn, footer { display: none; }
+      .resume-page { padding-top: 1rem; }
+      .resume-card { break-inside: avoid; border-color: #ccc; }
     }
   </style>
 </head>
@@ -122,6 +183,7 @@
     <a class="logo" href="index.html">MH</a>
     <div class="links">
       <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
       <a href="index.html#projects">Projects</a>
       <a href="resume.html">Resume</a>
     </div>
@@ -129,29 +191,144 @@
 </nav>
 
 <main class="resume-page">
+
   <div class="resume-header">
-    <h1>Resume</h1>
-    <a class="btn" href="resume.pdf" download>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-      Download PDF
-    </a>
+    <h1>Martin Harasimowicz</h1>
+    <div class="resume-contact">
+      Houston, TX<br>
+      <a href="mailto:your@email.com">your@email.com</a><br>
+      <a href="https://github.com/martinharasimowicz">github.com/martinharasimowicz</a>
+    </div>
   </div>
 
-  <div class="pdf-container">
-    <iframe src="resume.pdf" title="Resume"></iframe>
+  <div style="margin-top: 1rem;">
+    <button class="btn" onclick="window.print()">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m0 0a48.159 48.159 0 018.5 0m-8.5 0V6.75a2 2 0 012-2h4.5a2 2 0 012 2v1.034"/></svg>
+      Print / Save PDF
+    </button>
   </div>
 
-  <div class="pdf-fallback">
-    <p>PDF preview isn't available on mobile. Tap below to download.</p>
-    <a class="btn" href="resume.pdf" download>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-      Download PDF
-    </a>
+  <p class="resume-summary">
+    Product-minded builder with experience across software, partnerships, and technical problem solving. Focus on turning complex ideas into practical, user-facing products spanning web applications, AI tools, simulation, and hardware-oriented projects.
+  </p>
+
+  <!-- ── EXPERIENCE ── -->
+  <div class="section-label">Experience</div>
+  <div class="resume-items">
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <h3>Job Title</h3>
+        <span class="date">2023 — Present</span>
+      </div>
+      <div class="company">Company Name</div>
+      <div class="location">Houston, TX</div>
+      <ul>
+        <li>Describe what you did and the impact it had</li>
+        <li>Use metrics where possible — percentages, revenue, users</li>
+        <li>Keep each bullet to one line if you can</li>
+      </ul>
+    </div>
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <h3>Job Title</h3>
+        <span class="date">2021 — 2023</span>
+      </div>
+      <div class="company">Company Name</div>
+      <div class="location">City, ST</div>
+      <ul>
+        <li>Describe what you did and the impact it had</li>
+        <li>Use metrics where possible</li>
+        <li>Keep it concise</li>
+      </ul>
+    </div>
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <h3>Job Title</h3>
+        <span class="date">2019 — 2021</span>
+      </div>
+      <div class="company">Company Name</div>
+      <div class="location">City, ST</div>
+      <ul>
+        <li>Describe what you did and the impact it had</li>
+        <li>Use metrics where possible</li>
+      </ul>
+    </div>
+
   </div>
+
+  <hr class="divider">
+
+  <!-- ── EDUCATION ── -->
+  <div class="section-label">Education</div>
+  <div class="resume-items">
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <h3>Degree — Major</h3>
+        <span class="date">2015 — 2019</span>
+      </div>
+      <div class="company">University Name</div>
+      <div class="location">City, ST</div>
+      <p class="desc">Relevant coursework, honors, activities, or anything else worth noting.</p>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── PROJECTS ── -->
+  <div class="section-label">Notable Projects</div>
+  <div class="resume-items">
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <h3>Force Feedback Controller — Patent Pending</h3>
+      </div>
+      <p class="desc">Designed and built a C# application bridging MSFS 2024 helicopter telemetry to force feedback hardware. Identified an unsolved problem in the flight simulation community and developed a universal method for helicopter force-trim and autopilot control logic.</p>
+    </div>
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <h3>PC 90 Jet Engine Turbofan Case</h3>
+      </div>
+      <p class="desc">Engineered a fully 3D-printable small form factor PC case modeled after the GE-90 turbofan, featuring a 200mm fan cowling scaled to the real engine's bypass ratio and a custom external liquid cooling loop with dual 280mm radiators.</p>
+    </div>
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <h3>ExecOps AI</h3>
+      </div>
+      <p class="desc">Built an MVP web app for AI-powered private jet dispatch in flight simulators. Creates randomized schedules, routes, and characters based on terrain, weather, and flight length criteria with audio mission briefing playback.</p>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── SKILLS ── -->
+  <div class="section-label">Skills</div>
+  <div class="skills-row">
+    <span class="skill-tag">C#</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">HTML / CSS / JS</span>
+    <span class="skill-tag">SQL</span>
+    <span class="skill-tag">Git</span>
+    <span class="skill-tag">Fusion 360</span>
+    <span class="skill-tag">SimConnect</span>
+    <span class="skill-tag">AI Tooling</span>
+    <span class="skill-tag">3D Printing</span>
+    <span class="skill-tag">Product Development</span>
+    <span class="skill-tag">Business Strategy</span>
+    <span class="skill-tag">Flight Simulation</span>
+  </div>
+
 </main>
 
 <footer>
-  &copy; 2026 Martin Harasimowicz
+  &copy; 2026 Martin Harasimowicz · Made with ♥ by <a href="https://github.com/martinharasimowicz">martinharasimowicz</a>
 </footer>
 
 </body>
