@@ -1,4 +1,4 @@
-# Personal Portfolio — GitHub Pages Template
+# Personal Portfolio | GitHub Pages Template
 
 A clean, single-page portfolio site built with plain HTML, CSS, and JavaScript. No frameworks, no build tools, no dependencies. Just drop it into a `username.github.io` repo and go.
 
@@ -13,13 +13,13 @@ A clean, single-page portfolio site built with plain HTML, CSS, and JavaScript. 
 - Expandable project cards with links
 - Dedicated resume page with embedded PDF viewer
 - Smooth animations and transitions
-- Zero dependencies — one HTML file per page
+- Zero dependencies | one HTML file per page
 
 ---
 
 ## Quick Start
 
-1. **Create your repo** — name it `yourusername.github.io`
+1. **Create your repo** | name it `yourusername.github.io`
 2. **Copy these files** into the root:
 
 ```
@@ -41,12 +41,12 @@ yourusername.github.io/
 
 Open `index.html` and edit:
 
-- **Name** — find `Martin` / `Harasimowicz` in the `<h1>` tag
-- **One-liner** — the `<p>` right below the `<h1>`
-- **About text** — the two `<p>` tags inside `.about-text`
-- **Info cards** — update Location, Focus, and Contact values
-- **Social links** — update the GitHub and LinkedIn URLs in the footer
-- **Profile photo** — replace `profile.jpg` in your repo root (any aspect ratio works, it crops automatically)
+- **Name** | find `Martin` / `Harasimowicz` in the `<h1>` tag
+- **One-liner** | the `<p>` right below the `<h1>`
+- **About text** | the two `<p>` tags inside `.about-text`
+- **Info cards** | update Location, Focus, and Contact values
+- **Social links** | update the GitHub and LinkedIn URLs in the footer
+- **Profile photo** | replace `profile.jpg` in your repo root (any aspect ratio works, it crops automatically)
 
 ### Project Cards
 
@@ -92,7 +92,7 @@ All colors are CSS variables at the top of `index.html`. Change the theme by edi
   --surface: #FFFFFF;       /* card background */
   --text: #1A1A1A;          /* primary text */
   --text-secondary: #5C5C5C;/* secondary text */
-  --accent: #2D5A3D;        /* green accent — change this for a different vibe */
+  --accent: #2D5A3D;        /* green accent | change this for a different vibe */
   --accent-light: #E8F0EB;  /* tag background */
   --border: #E4E2DD;        /* borders */
   --radius: 10px;           /* corner radius */
@@ -114,4 +114,4 @@ All colors are CSS variables at the top of `index.html`. Change the theme by edi
 
 ## License
 
-MIT — use it however you want.
+MIT | use it however you want.
