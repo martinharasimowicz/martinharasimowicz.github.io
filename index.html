@@ -505,97 +505,81 @@
       padding-top: 1.75rem;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-    }
-
-    .footer-links a:hover { color: var(--accent); }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .about-grid,
-      .project-layout,
-      .proof-grid,
-      .secondary-grid,
-      .writing-grid,
-      .contact-band {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-band {
-        display: grid;
-      }
-
-      .hero-photo {
-        justify-self: start;
-        width: 220px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container,
-      nav .inner {
-        padding-left: 1.1rem;
-        padding-right: 1.1rem;
-      }
-
-      .nav-links {
-        gap: .95rem;
-        font-size: .84rem;
-      }
-
-      .hero {
-        padding-top: 4.75rem;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn { width: 100%; }
-
-      .hero-photo {
-        width: 180px;
-      }
-
-      footer .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-
-        .footer-links {
+.footer-links {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   flex-wrap: wrap;
 }
 
-.email-text {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
+.email-menu {
+  position: relative;
+  display: inline-block;
 }
 
-.copy-email-btn {
-  background: transparent;
+.email-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.email-trigger:hover,
+.email-trigger:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+.email-popover {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 180px;
+  background: var(--surface);
   border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  z-index: 1000;
+}
+
+.email-menu:hover .email-popover,
+.email-menu:focus-within .email-popover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.email-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
   border-radius: 8px;
-  padding: 0.35rem 0.7rem;
+  padding: 0.55rem 0.7rem;
   font: inherit;
   color: var(--text);
+  text-decoration: none;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.copy-email-btn:hover {
-  border-color: var(--accent);
+.email-option:hover,
+.email-option:focus-visible {
+  background: var(--accent-light);
   color: var(--accent);
+  outline: none;
 }
       }
     }
@@ -835,38 +819,37 @@
 <footer>
   <div class="container footer-inner">
     <div>© 2026 Martin Harasimowicz</div>
-
     <div class="footer-links">
-      <a href="mailto:martin_harasimowicz@icloud.com?subject=Portfolio%20Inquiry">Email</a>
-      <span class="email-text">martin_harasimowicz@icloud.com</span>
-      <button
-        type="button"
-        class="copy-email-btn"
-        onclick="copyEmail()"
-        aria-label="Copy email address"
-      >
-        Copy Email
-      </button>
+      <div class="email-menu">
+        <button type="button" class="email-trigger" aria-haspopup="true" aria-expanded="false">
+          Email
+        </button>
+
+        <div class="email-popover" role="menu" aria-label="Email options">
+          <a
+            href="mailto:martin_harasimowicz@icloud.com?subject=Portfolio%20Inquiry"
+            class="email-option"
+            role="menuitem"
+          >
+            Open email
+          </a>
+
+          <button
+            type="button"
+            class="email-option email-copy-btn"
+            role="menuitem"
+            onclick="copyEmail(this)"
+          >
+            Click to copy
+          </button>
+        </div>
+      </div>
 
       <a href="https://github.com/martinharasimowicz" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/martinharasimowicz/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </div>
 </footer>
-
-<script>
-  function copyEmail() {
-    const email = "martin_harasimowicz@icloud.com";
-    navigator.clipboard.writeText(email).then(() => {
-      const btn = document.querySelector(".copy-email-btn");
-      const originalText = btn.textContent;
-      btn.textContent = "Copied";
-      setTimeout(() => {
-        btn.textContent = originalText;
-      }, 1500);
-    });
-  }
-</script>
 
      </div>
     </div>
