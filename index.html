@@ -804,14 +804,42 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div>© 2026 Martin Harasimowicz</div>
-      <div class="footer-links">
-        <a href="mailto:martin_harasimowicz@icloud.com">Email</a>
-        <a href="https://github.com/martinharasimowicz" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/martinharasimowicz/“ target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
+<footer>
+  <div class="container footer-inner">
+    <div>© 2026 Martin Harasimowicz</div>
+
+    <div class="footer-links">
+      <a href="mailto:martin_harasimowicz@icloud.com?subject=Portfolio%20Inquiry">Email</a>
+      <span class="email-text">martin_harasimowicz@icloud.com</span>
+      <button
+        type="button"
+        class="copy-email-btn"
+        onclick="copyEmail()"
+        aria-label="Copy email address"
+      >
+        Copy Email
+      </button>
+
+      <a href="https://github.com/martinharasimowicz" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/your-linkedin-url/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function copyEmail() {
+    const email = "martin_harasimowicz@icloud.com";
+    navigator.clipboard.writeText(email).then(() => {
+      const btn = document.querySelector(".copy-email-btn");
+      const originalText = btn.textContent;
+      btn.textContent = "Copied";
+      setTimeout(() => {
+        btn.textContent = originalText;
+      }, 1500);
+    });
+  }
+</script>
+     </div>
     </div>
   </footer>
 </body>
