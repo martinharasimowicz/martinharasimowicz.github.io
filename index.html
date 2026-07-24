@@ -3,156 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Martin Harasimowicz</title>
-  <meta name="description" content="Commercial strategist turned technical builder working across aviation, simulation, hardware, and applied AI.">
-  <meta property="og:title" content="Martin Harasimowicz">
-  <meta property="og:description" content="Commercial strategist turned technical builder in aviation, simulation, hardware, and applied AI.">
+  <title>Martin Harasimowicz | Aviation Strategy &amp; Commercial Operations</title>
+  <meta name="description" content="Strategy and operations professional focused on aviation, market intelligence, commercial systems, and technical analysis.">
+  <meta property="og:title" content="Martin Harasimowicz | Aviation Strategy &amp; Commercial Operations">
+  <meta property="og:description" content="Commercial strategy, technical analysis, and practical execution for complex aviation and technology markets.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#2D5A3D">
+  <meta name="theme-color" content="#214e36">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-
-    :root {
-      --bg: #fafaf8;
-      --surface: #ffffff;
-      --surface-alt: #f4f6f2;
-      --text: #171717;
-      --text-secondary: #575757;
-      --accent: #2d5a3d;
-      --accent-dark: #234a30;
-      --accent-light: #e7efe9;
-      --border: #e6e3dc;
-      --shadow: 0 10px 34px rgba(0,0,0,.05);
-      --radius: 12px;
-      --radius-lg: 18px;
-      --max: 1040px;
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #f7f8f5;
+      --surface: #ffffff;
+      --surface-soft: #eef3ee;
+      --text: #172019;
+      --text-secondary: #536057;
+      --accent: #214e36;
+      --accent-dark: #173b28;
+      --accent-light: #dfeae2;
+      --border: #dfe5df;
+      --shadow: 0 14px 38px rgba(24, 45, 31, 0.07);
+      --radius: 14px;
+      --radius-lg: 22px;
+      --max: 1080px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: 'DM Sans', sans-serif;
+      font-family: "DM Sans", sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
     .container {
-      max-width: var(--max);
+      width: min(var(--max), calc(100% - 3rem));
       margin: 0 auto;
-      padding: 0 2rem;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 1000;
+      padding: 0.75rem 1rem;
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(14px);
-      background: rgba(250,250,248,.88);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(223, 229, 223, 0.9);
+      background: rgba(247, 248, 245, 0.92);
+      backdrop-filter: blur(16px);
     }
 
-    nav .inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      height: 64px;
-      padding: 0 2rem;
+    .nav-inner {
+      min-height: 66px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 2rem;
     }
 
-    .logo {
-      font-family: 'DM Serif Display', serif;
+    .brand {
       text-decoration: none;
-      font-size: 1.2rem;
-      letter-spacing: -.01em;
+      font-family: "DM Serif Display", serif;
+      font-size: 1.18rem;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
       align-items: center;
+      justify-content: flex-end;
+      gap: 1.4rem;
     }
 
     .nav-links a {
-      text-decoration: none;
-      font-size: .9rem;
-      font-weight: 500;
       color: var(--text-secondary);
-      transition: color .2s ease;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
     }
 
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent);
+    }
+
+    .nav-resume {
+      padding: 0.5rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--surface);
+    }
 
     .hero {
-      padding: 6.5rem 0 3.5rem;
+      padding: 6rem 0 4.5rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.35fr .65fr;
-      gap: 3rem;
+      grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.6fr);
       align-items: center;
+      gap: 4rem;
     }
 
     .eyebrow {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: .35rem .75rem;
-      border-radius: 999px;
-      background: var(--accent-light);
+      margin: 0 0 1rem;
       color: var(--accent);
-      font-size: .76rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: .08em;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
     }
 
-    h1 {
-      margin: 0 0 1rem;
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.8rem, 6vw, 4.75rem);
-      line-height: 1.02;
-      letter-spacing: -.03em;
+    h1,
+    h2 {
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+      letter-spacing: -0.025em;
     }
 
-    .hero h1 span { color: var(--accent); }
+    h1 {
+      max-width: 790px;
+      margin: 0 0 1.25rem;
+      font-size: clamp(3rem, 6.6vw, 5.35rem);
+      line-height: 1;
+    }
 
     .hero-lead {
-      max-width: 700px;
-      font-size: 1.12rem;
+      max-width: 760px;
+      margin: 0 0 1.6rem;
       color: var(--text-secondary);
-      margin: 0 0 1.75rem;
+      font-size: clamp(1.04rem, 2vw, 1.2rem);
+      line-height: 1.72;
     }
 
-    .hero-actions {
+    .availability {
       display: flex;
-      gap: .9rem;
       flex-wrap: wrap;
-      margin-bottom: 1.5rem;
+      gap: 0.45rem 1.1rem;
+      margin: 0 0 1.7rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .availability span {
+      position: relative;
+    }
+
+    .availability span + span::before {
+      content: "";
+      position: absolute;
+      left: -0.65rem;
+      top: 50%;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateY(-50%);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: .45rem;
-      padding: .82rem 1.35rem;
-      border-radius: 12px;
-      font-size: .92rem;
+      min-height: 46px;
+      padding: 0.72rem 1.15rem;
+      border: 1.5px solid transparent;
+      border-radius: 10px;
+      font-size: 0.9rem;
       font-weight: 700;
       text-decoration: none;
-      border: 1.5px solid transparent;
-      transition: .2s ease;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
     }
 
     .btn-primary {
@@ -160,11 +223,13 @@
       color: #fff;
     }
 
-    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
 
     .btn-secondary {
-      background: var(--surface);
       border-color: var(--border);
+      background: var(--surface);
       color: var(--text);
     }
 
@@ -173,605 +238,797 @@
       color: var(--accent);
     }
 
-    .micro-proof {
-      font-size: .93rem;
-      color: var(--text-secondary);
-      max-width: 650px;
-    }
-
-    .hero-photo {
-      width: min(100%, 320px);
+    .portrait {
+      position: relative;
+      width: min(100%, 310px);
+      aspect-ratio: 4 / 5;
       justify-self: end;
-      aspect-ratio: 1 / 1;
-      border-radius: 22px;
       overflow: hidden;
       border: 1px solid var(--border);
-      background: var(--surface);
+      border-radius: 26px;
+      background: linear-gradient(145deg, var(--accent-light), #f6f8f5);
       box-shadow: var(--shadow);
     }
 
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
-
-.proof-strip {
-  padding: 1.25rem 0 1.5rem;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-section {
-  padding: 4rem 0;
-}
-    .proof-grid {
+    .portrait-fallback {
+      position: absolute;
+      inset: 0;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+      place-items: center;
+      color: var(--accent);
+      font-family: "DM Serif Display", serif;
+      font-size: 4.4rem;
     }
 
-    .proof-card {
-      background: var(--surface);
+    .portrait img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .results {
+      padding: 0 0 4.5rem;
+    }
+
+    .results-shell {
+      padding: 1.5rem;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 1.25rem 1.25rem 1.15rem;
+      background: var(--surface);
       box-shadow: var(--shadow);
     }
 
-    .proof-card h3 {
-      margin: 0 0 .45rem;
-      font-size: 1rem;
+    .results-label {
+      margin: 0 0 1rem;
+      color: var(--text-secondary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
     }
 
-    .proof-card p {
-      margin: 0;
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .metric {
+      min-width: 0;
+      padding: 0.15rem 1.2rem;
+      border-left: 1px solid var(--border);
+    }
+
+    .metric:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .metric-value {
+      margin-bottom: 0.2rem;
+      color: var(--accent);
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+      line-height: 1;
+    }
+
+    .metric-label {
       color: var(--text-secondary);
-      font-size: .92rem;
+      font-size: 0.82rem;
+      line-height: 1.45;
     }
 
     section {
-      padding: 4.75rem 0;
+      padding: 5.25rem 0;
       border-top: 1px solid var(--border);
     }
 
-    .section-head {
-      margin-bottom: 2rem;
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.32fr 0.68fr;
+      gap: 2rem;
+      margin-bottom: 2.25rem;
+      align-items: start;
     }
 
     .section-label {
-      margin-bottom: .7rem;
-      font-size: .76rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .11em;
       color: var(--accent);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     h2 {
-      margin: 0 0 .7rem;
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      letter-spacing: -.02em;
-      line-height: 1.08;
+      margin: 0 0 0.8rem;
+      font-size: clamp(2.05rem, 4vw, 3.25rem);
+      line-height: 1.07;
     }
 
-    .section-lead {
-      max-width: 720px;
+    .section-intro {
+      max-width: 770px;
       margin: 0;
       color: var(--text-secondary);
       font-size: 1.02rem;
     }
 
-    .about-grid {
+    .profile-grid {
       display: grid;
-      grid-template-columns: 1.25fr .75fr;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
       gap: 2rem;
       align-items: start;
     }
 
-    .about-copy p {
+    .profile-copy {
+      padding-right: 1.5rem;
+    }
+
+    .profile-copy p {
       margin: 0 0 1rem;
       color: var(--text-secondary);
+      font-size: 1rem;
     }
 
-    .about-copy p:first-child {
+    .profile-copy p:first-child {
       color: var(--text);
-      font-size: 1.04rem;
+      font-size: 1.08rem;
     }
 
-    .info-stack {
+    .value-card {
+      padding: 1.45rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .value-card h3 {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+    }
+
+    .value-list {
       display: grid;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .value-list li {
+      position: relative;
+      padding-left: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.91rem;
+    }
+
+    .value-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .through-line {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
     }
 
-    .info-card {
-      background: var(--surface);
+    .capability-card {
+      min-height: 100%;
+      padding: 1.35rem;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1.15rem 1.2rem;
+      background: var(--surface);
     }
 
-    .info-card .label {
-      font-size: .72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
+    .capability-card .number {
+      margin-bottom: 0.9rem;
       color: var(--accent);
-      margin-bottom: .35rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
     }
 
-    .info-card .value {
-      font-size: .97rem;
-      font-weight: 500;
+    .capability-card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.08rem;
+      line-height: 1.3;
     }
 
-    .work-grid {
+    .capability-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.91rem;
+    }
+
+    .work-stack {
       display: grid;
       gap: 1.25rem;
     }
 
-    .featured-card,
-    .project-card,
-    .writing-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
+    .case-study {
+      padding: 1.8rem;
+      border: 1px solid rgba(33, 78, 54, 0.28);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, #ffffff 0%, #f1f6f2 100%);
       box-shadow: var(--shadow);
     }
 
-    .featured-card {
-      padding: 1.6rem;
-      border-color: rgba(45,90,61,.22);
-      background: linear-gradient(180deg, #ffffff 0%, #f8fbf8 100%);
-    }
-
-    .project-layout {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 1.5rem;
-      align-items: start;
-    }
-
-    .card-kicker {
-      display: inline-block;
-      margin-bottom: .8rem;
-      font-size: .72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--accent);
-      background: var(--accent-light);
-      padding: .3rem .65rem;
+    .case-kicker {
+      display: inline-flex;
+      margin-bottom: 0.85rem;
+      padding: 0.28rem 0.62rem;
       border-radius: 999px;
-    }
-
-    .featured-card h3,
-    .project-card h3,
-    .writing-card h3 {
-      margin: 0 0 .65rem;
-      font-size: 1.28rem;
-      line-height: 1.2;
-      letter-spacing: -.01em;
-    }
-
-    .project-summary,
-    .featured-summary,
-    .writing-card p,
-    .project-body p {
-      color: var(--text-secondary);
-      margin: 0 0 .9rem;
-    }
-
-    .project-points {
-      margin: 1rem 0 1.1rem;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: .65rem;
-    }
-
-    .project-points li {
-      padding-left: 1rem;
-      position: relative;
-      color: var(--text-secondary);
-      font-size: .96rem;
-    }
-
-    .project-points li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
+      background: var(--accent-light);
       color: var(--accent);
+      font-size: 0.7rem;
       font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .case-study h3 {
+      max-width: 790px;
+      margin: 0 0 0.7rem;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      line-height: 1.2;
+    }
+
+    .case-summary {
+      max-width: 850px;
+      margin: 0 0 1.4rem;
+      color: var(--text-secondary);
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .case-block {
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .case-block strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .case-block p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .project-card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.08rem;
+      line-height: 1.3;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
     }
 
     .tags {
       display: flex;
-      gap: .5rem;
       flex-wrap: wrap;
-      margin: 1rem 0 1.1rem;
+      gap: 0.4rem;
+      margin-top: auto;
+      padding-top: 1rem;
     }
 
     .tag {
-      display: inline-flex;
-      align-items: center;
-      padding: .28rem .68rem;
+      padding: 0.24rem 0.52rem;
       border-radius: 999px;
-      background: var(--accent-light);
+      background: var(--surface-soft);
       color: var(--accent);
-      font-size: .74rem;
+      font-size: 0.68rem;
       font-weight: 700;
     }
 
-    .project-links {
-      display: flex;
-      gap: .75rem;
-      flex-wrap: wrap;
-      margin-top: .25rem;
-    }
-
-    .project-link {
-      text-decoration: none;
-      font-size: .87rem;
-      font-weight: 700;
-      color: var(--accent);
-      border-bottom: 1px solid transparent;
-    }
-
-    .project-link:hover { border-color: currentColor; }
-
-    .project-card {
-      padding: 1.35rem 1.35rem 1.2rem;
-    }
-
-    .project-card button {
-      all: unset;
-      display: block;
-      cursor: pointer;
-    }
-
-    .project-card summary {
-      list-style: none;
-      cursor: pointer;
-    }
-
-    details > summary::-webkit-details-marker { display: none; }
-
-    .project-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: start;
-    }
-
-    .chevron {
-      font-size: 1.15rem;
-      line-height: 1;
-      color: var(--text-secondary);
-      transition: transform .2s ease;
-    }
-
-    details[open] .chevron { transform: rotate(180deg); }
-
-    .project-body {
-      padding-top: 1rem;
-      margin-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .secondary-grid {
+    .writing-shell {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 1.4rem;
+      align-items: stretch;
     }
 
-    .writing-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-    }
-
-    .writing-card {
-      padding: 1.35rem;
-    }
-
-    .contact-band {
-      background: var(--surface);
+    .writing-summary {
+      padding: 1.55rem;
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 1.6rem;
-      display: flex;
-      justify-content: space-between;
+      border-radius: var(--radius);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .writing-summary .section-label {
+      margin-bottom: 0.8rem;
+      color: #cfe0d3;
+    }
+
+    .writing-summary h3 {
+      margin: 0 0 0.8rem;
+      font-family: "DM Serif Display", serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .writing-summary p {
+      margin: 0;
+      color: #e2ece5;
+      font-size: 0.94rem;
+    }
+
+    .article-list {
+      display: grid;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .article-link {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
       align-items: center;
-      gap: 1.5rem;
+      padding: 1.15rem 1.25rem;
+      border-top: 1px solid var(--border);
+      text-decoration: none;
+    }
+
+    .article-link:first-child {
+      border-top: 0;
+    }
+
+    .article-link:hover,
+    .article-link:focus-visible {
+      background: var(--surface-soft);
+    }
+
+    .article-type {
+      margin-bottom: 0.2rem;
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .article-arrow {
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
       box-shadow: var(--shadow);
     }
 
-    .contact-band h3 {
-      margin: 0 0 .45rem;
-      font-size: 1.25rem;
+    .contact-card h2 {
+      max-width: 660px;
+      margin-bottom: 0.65rem;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
     }
 
-    .contact-band p {
+    .contact-card p {
+      max-width: 690px;
       margin: 0;
       color: var(--text-secondary);
-      max-width: 640px;
     }
 
     footer {
       padding: 2.2rem 0 3rem;
       color: var(--text-secondary);
-      font-size: .92rem;
+      font-size: 0.84rem;
     }
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
-      gap: 1rem;
       align-items: center;
-      border-top: 1px solid var(--border);
-      padding-top: 1.75rem;
+      justify-content: space-between;
+      gap: 1.5rem;
     }
 
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-.email-menu {
-  position: relative;
-  display: inline-block;
-}
+    .footer-links a {
+      text-decoration: none;
+    }
 
-.email-trigger {
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-}
+    .footer-links a:hover {
+      color: var(--accent);
+    }
 
-.email-trigger:hover,
-.email-trigger:focus-visible {
-  color: var(--accent);
-  outline: none;
-}
+    @media (max-width: 900px) {
+      .hero-grid,
+      .profile-grid,
+      .writing-shell {
+        grid-template-columns: 1fr;
+      }
 
-.email-popover {
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  left: 0;
-  min-width: 180px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  padding: 0.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(6px);
-  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
-  z-index: 1000;
-}
+      .hero {
+        padding-top: 4.5rem;
+      }
 
-.email-menu:hover .email-popover,
-.email-menu:focus-within .email-popover {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
+      .portrait {
+        width: min(70%, 290px);
+        justify-self: start;
+      }
 
-.email-option {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  border-radius: 8px;
-  padding: 0.55rem 0.7rem;
-  font: inherit;
-  color: var(--text);
-  text-decoration: none;
-  cursor: pointer;
-}
+      .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem 0;
+      }
 
-.email-option:hover,
-.email-option:focus-visible {
-  background: var(--accent-light);
-  color: var(--accent);
-  outline: none;
-}
+      .metric:nth-child(3) {
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .through-line,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 2rem, var(--max));
+      }
+
+      .nav-inner {
+        min-height: 60px;
+      }
+
+      .nav-links {
+        gap: 0.85rem;
+      }
+
+      .nav-links a:not(.nav-resume) {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(2.65rem, 13vw, 4.1rem);
+      }
+
+      .hero-grid {
+        gap: 2.5rem;
+      }
+
+      .portrait {
+        width: min(78%, 270px);
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      .profile-copy {
+        padding-right: 0;
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1.5rem;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric,
+      .metric:nth-child(3) {
+        padding: 0.8rem 0;
+        border-top: 1px solid var(--border);
+        border-left: 0;
+      }
+
+      .metric:first-child {
+        padding-top: 0;
+        border-top: 0;
+      }
+
+      .actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media print {
+      nav,
+      .actions,
+      #contact,
+      footer {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .hero,
+      section {
+        padding: 2rem 0;
+      }
+
+      .case-study,
+      .project-card,
+      .capability-card,
+      .value-card,
+      .results-shell {
+        box-shadow: none;
+        break-inside: avoid;
       }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="inner">
-      <a class="logo" href="#top">MH</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Martin Harasimowicz</a>
       <div class="nav-links">
-        <a href="#about">About</a>
+        <a href="#profile">Profile</a>
+        <a href="#experience">Experience</a>
         <a href="#work">Work</a>
-        <a href="resume.html">Resume</a>
-        <a href="#contact">Contact</a>
+        <a href="#writing">Writing</a>
+        <a class="nav-resume" href="resume.html">Resume</a>
       </div>
     </div>
   </nav>
 
-  <main id="top">
-    <header class="hero">
+  <main id="main">
+    <header class="hero" id="top">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Aviation · Systems · Strategy</div>
-          <h1>Martin <span>Harasimowicz</span></h1>
-          <p class="hero-lead">Commercial strategist turned technical builder working across aviation, simulation, hardware, and applied AI. I build practical products, analyze complex systems, and translate between technical execution and business strategy.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="resume.html">View Resume</a>
-            <a class="btn btn-secondary" href="#work">Selected Work</a>
-            <a class="btn btn-secondary" href="mailto:martin_harasimowicz@icloud.com">Email Me</a>
+          <p class="eyebrow">Aviation Strategy &middot; Commercial Operations &middot; Technical Analysis</p>
+          <h1>I turn complex markets and technical systems into clear decisions.</h1>
+          <p class="hero-lead">
+            I am Martin Harasimowicz, a strategy and operations professional focused on aviation and technology. My background spans go-to-market strategy, market intelligence, revenue forecasting, published analysis, and hands-on product development.
+          </p>
+          <div class="availability" aria-label="Location and role interests">
+            <span>Chicago, IL</span>
+            <span>Open to relocation</span>
+            <span>Strategy, research, product, and commercial operations</span>
           </div>
-          <p class="micro-proof">My background spans partnerships, business development, product thinking, technical writing, and hands-on building. That combination shapes how I approach software, simulation, and hardware problems: with commercial judgment, systems thinking, and a bias toward useful execution.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="resume.html">View Resume</a>
+            <a class="btn btn-secondary" href="#work">Explore Selected Work</a>
+            <a class="btn btn-secondary" href="mailto:martinharasimowicz@icloud.com">Contact Me</a>
+          </div>
         </div>
 
-        <div class="hero-photo">
+        <div class="portrait" aria-label="Portrait of Martin Harasimowicz">
+          <div class="portrait-fallback" aria-hidden="true">MH</div>
           <img src="profile.jpeg" alt="Martin Harasimowicz">
         </div>
       </div>
     </header>
 
-    <section class="proof-strip">
-      <div class="container proof-grid">
-        <div class="proof-card">
-          <h3>Commercial Judgment</h3>
-          <p>Experience in partnerships, GTM, pipeline development, and strategic growth across software and emerging ventures.</p>
+    <div class="results">
+      <div class="container">
+        <div class="results-shell">
+          <p class="results-label">Selected results</p>
+          <div class="results-grid">
+            <div class="metric">
+              <div class="metric-value">$4.4M</div>
+              <div class="metric-label">Qualified pipeline generated at an early-stage technology company</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">300%</div>
+              <div class="metric-label">Increase in qualified pipeline while leading Canadian market expansion</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">20,000+</div>
+              <div class="metric-label">Accounts segmented and scored to build a repeatable GTM motion</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">Six figures</div>
+              <div class="metric-label">Cumulative page views across published aviation reporting and analysis</div>
+            </div>
+          </div>
         </div>
-        <div class="proof-card">
-          <h3>Technical Range</h3>
-          <p>Hands-on with C#, Python, web applications, simulation tooling, hardware analysis, and CAD-driven product work.</p>
+      </div>
+    </div>
+
+    <section id="profile">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-label">Professional Profile</div>
+          <div>
+            <h2>Commercially grounded and technically fluent</h2>
+            <p class="section-intro">My strongest work sits between market analysis, operating systems, product judgment, and technical subject matter.</p>
+          </div>
         </div>
-        <div class="proof-card">
-          <h3>Domain Depth</h3>
-          <p>Focused on aviation, flight simulation, technical hardware, and practical products that bridge systems and end users.</p>
+
+        <div class="profile-grid">
+          <div class="profile-copy">
+            <p>I spent six years building commercial systems in cybersecurity, alternative-assets intelligence, and early-stage software. The work centered on turning incomplete market and customer data into segmentation, forecasts, executive reporting, and measurable growth.</p>
+            <p>Alongside that career, I developed aviation domain depth through published reporting, technical product reviews, trade show coverage, simulator software, and hardware development. That combination allows me to work comfortably across commercial teams, product specialists, and technical stakeholders.</p>
+            <p>I am targeting roles where aviation, market intelligence, product strategy, and commercial operations intersect. I bring the analytical discipline to frame a problem, the operational experience to build a working system, and the communication skills to make the result useful to decision-makers.</p>
+          </div>
+
+          <aside class="value-card" aria-label="Areas of value">
+            <h3>Where I add value</h3>
+            <ul class="value-list">
+              <li>Market sizing, segmentation, and competitive intelligence</li>
+              <li>Revenue forecasting and executive-ready reporting</li>
+              <li>GTM strategy and commercial operating systems</li>
+              <li>Technical product evaluation and communication</li>
+              <li>Applied AI workflow and product design</li>
+            </ul>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section id="about">
+    <section id="experience">
       <div class="container">
-        <div class="section-head">
-          <div class="section-label">About</div>
-          <h2>Built at the intersection of strategy and systems</h2>
+        <div class="section-heading">
+          <div class="section-label">Experience</div>
+          <div>
+            <h2>One through-line across three kinds of work</h2>
+            <p class="section-intro">The titles have varied, but the recurring job has been the same: make complex information useful, build structure, and move an organization toward a decision.</p>
+          </div>
         </div>
 
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>I work best where technical depth, product judgment, and commercial thinking overlap. My projects usually start with a messy real-world problem and end with something clearer, more usable, and more defensible.</p>
-            <p>That has led me into simulation tooling, aviation-focused concepts, AI-assisted workflows, technical writing, and hardware-adjacent design. I am especially interested in projects that require both analytical rigor and practical execution rather than one or the other.</p>
-            <p>Before focusing more heavily on building, I worked across partnerships, business development, and growth. That background still shapes how I evaluate products: not just whether they work, but whether they solve the right problem and create real leverage.</p>
-          </div>
-
-          <div class="info-stack">
-            <div class="info-card">
-              <div class="label">Location</div>
-              <div class="value">Chicago, IL</div>
-            </div>
-            <div class="info-card">
-              <div class="label">Focus</div>
-              <div class="value">Aviation · Strategy · Product · Technical Analysis</div>
-            </div>
-            <div class="info-card">
-              <div class="label">Contact</div>
-              <div class="value"><a href="mailto:martin_harasimowicz@icloud.com">martin_harasimowicz@icloud.com</a></div>
-            </div>
-          </div>
+        <div class="through-line">
+          <article class="capability-card">
+            <div class="number">01</div>
+            <h3>Market and growth systems</h3>
+            <p>Built segmentation, pipeline, forecasting, CRM, and reporting infrastructure across early-stage SaaS, cybersecurity, and market-intelligence companies.</p>
+          </article>
+          <article class="capability-card">
+            <div class="number">02</div>
+            <h3>Aviation research and communication</h3>
+            <p>Publish technical reviews and industry reporting for FSElite, including product evaluation, executive interviews, and on-site trade show coverage.</p>
+          </article>
+          <article class="capability-card">
+            <div class="number">03</div>
+            <h3>Technical product thinking</h3>
+            <p>Develop aviation software and hardware concepts that combine user needs, system behavior, engineering constraints, and commercial viability.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="work">
       <div class="container">
-        <div class="section-head">
+        <div class="section-heading">
           <div class="section-label">Selected Work</div>
-          <h2>Projects that show how I think</h2>
-          <p class="section-lead"> Weaving technical systems, product framing, and commercial together reasoning without losing the main thread.</p>
+          <div>
+            <h2>Evidence of how I approach problems</h2>
+            <p class="section-intro">Professional outcomes come first. The technical projects show additional range and aviation-domain depth.</p>
+          </div>
         </div>
 
-        <div class="work-grid">
-          <article class="featured-card">
-            <div class="project-layout">
-              <div>
-                <div class="card-kicker">Flagship Project</div>
-                <h3>Patent-pending force-feedback control architecture for simulated rotary-wing aircraft</h3>
-                <p class="featured-summary">Designed a software-driven approach for translating helicopter trim, force-trim release, and automation logic into commercially available force-feedback controls.</p>
-                <ul class="project-points">
-                  <li><strong>Problem:</strong> no broadly usable method for reproducing realistic helicopter trim and autopilot behavior across consumer force-feedback hardware.</li>
-                  <li><strong>Built:</strong> a C# application using simulator telemetry and control-state logic to interpret trim inputs, automation states, and control feedback behavior.</li>
-                  <li><strong>Why it matters:</strong> demonstrates systems reasoning, aviation-domain depth, and the ability to turn a fragmented technical problem into a coherent product architecture.</li>
-                </ul>
-                <div class="tags">
-                  <span class="tag">C#</span>
-                  <span class="tag">SimConnect</span>
-                  <span class="tag">Systems Design</span>
-                  <span class="tag">Aviation</span>
-                </div>
-                <div class="project-links">
-                  <a class="project-link" href="mailto:martin_harasimowicz@icloud.com?subject=Helicopter%20FFB%20Project%20Brief">Request technical brief</a>
-                  <a class="project-link" href="resume.html">View resume context</a>
-                </div>
+        <div class="work-stack">
+          <article class="case-study">
+            <div class="case-kicker">Commercial Strategy Case</div>
+            <h3>Building a GTM operating system across 20,000+ accounts</h3>
+            <p class="case-summary">Converted an early-stage company's founder-led sales motion into a structured system for prioritization, forecasting, and executive decision-making.</p>
+            <div class="case-grid">
+              <div class="case-block">
+                <strong>Context</strong>
+                <p>The company needed a repeatable way to identify its strongest market segments and manage growth beyond founder relationships.</p>
               </div>
-              <div class="info-stack">
-                <div class="info-card">
-                  <div class="label">What it signals</div>
-                  <div class="value">Technical depth, domain specificity, and original systems thinking.</div>
-                </div>
-                <div class="info-card">
-                  <div class="label">Relevant to</div>
-                  <div class="value">Aerospace, simulation, product strategy, technical consulting, defense-adjacent work.</div>
-                </div>
-                <div class="info-card">
-                  <div class="label">Artifact status</div>
-                  <div class="value">Patent filing completed. Additional technical detail available on request.</div>
-                </div>
+              <div class="case-block">
+                <strong>Work</strong>
+                <p>Built lead scoring and customer segmentation across 20,000+ accounts, then developed revenue forecasts and board-level reporting.</p>
+              </div>
+              <div class="case-block">
+                <strong>Outcome</strong>
+                <p>Generated $1.2M in qualified pipeline within six months and acquired the company's first paying customer.</p>
               </div>
             </div>
           </article>
 
-          <div class="secondary-grid">
+          <div class="project-grid">
             <article class="project-card">
-              <details>
-                <summary>
-                  <div class="project-head">
-                    <div>
-                      <div class="card-kicker">Engineering Design</div>
-                      <h3>PC90 turbofan-inspired small-form-factor case</h3>
-                      <p class="project-summary">A 3D-printable PC case concept modeled after the GE90, balancing visual identity, airflow, and manufacturability.</p>
-                    </div>
-                    <div class="chevron">⌄</div>
-                  </div>
-                  <div class="tags">
-                    <span class="tag">Fusion 360</span>
-                    <span class="tag">Product Design</span>
-                    <span class="tag">3D Printing</span>
-                  </div>
-                </summary>
-                <div class="project-body">
-                  <p>This concept explores how far an aviation form factor can be pushed into a viable consumer hardware object. The work involved scaling around a large intake fan, managing thermal assumptions, material properties, and designing printable geometry that still felt true to the engine inspiration.</p>
-                  <div class="project-links">
-                    <a class="project-link" href="mailto:martin_harasimowicz@icloud.com?subject=PC90%20Project%20Assets">Request design walkthrough</a>
-                  </div>
-                </div>
-              </details>
+              <div class="case-kicker">Aviation Strategy</div>
+              <h3>Regional air-service market opportunity</h3>
+              <p>Developed a data-driven case for a Midwest airport's Florida leisure strategy using drive-time catchments, local-origin demand, airport capacity constraints, and carrier network fit.</p>
+              <div class="tags">
+                <span class="tag">Market Research</span>
+                <span class="tag">Demand Analysis</span>
+                <span class="tag">Route Strategy</span>
+              </div>
             </article>
 
             <article class="project-card">
-              <details>
-                <summary>
-                  <div class="project-head">
-                    <div>
-                      <div class="card-kicker">Product Concept</div>
-                      <h3>ExecOps AI private-jet dispatch concept</h3>
-                      <p class="project-summary">An aviation-focused, AI-powered for generating richer, more structured simulator dispatch scenarios.</p>
-                    </div>
-                    <div class="chevron">⌄</div>
-                  </div>
-                  <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">AI Workflows</span>
-                    <span class="tag">Aviation</span>
-                  </div>
-                </summary>
-                <div class="project-body">
-                  <p>Built as an MVP and product thesis, this concept generates routes, passenger profiles, trip logic, and briefing-style outputs based on terrain, weather, and operating constraints. The value is less about novelty for its own sake and more about using AI to make a niche workflow meaningfully better.</p>
-                  <div class="project-links">
-                    <a class="project-link" href="mailto:martin_harasimowicz@icloud.com?subject=ExecOps%20AI%20Overview">Request product overview</a>
-                  </div>
-                </div>
-              </details>
+              <div class="case-kicker">Systems Architecture</div>
+              <h3>Helicopter force-feedback control layer</h3>
+              <p>Designed a patent-pending software architecture that translates helicopter trim, automation states, and simulator telemetry into realistic control-loading behavior.</p>
+              <div class="tags">
+                <span class="tag">C#</span>
+                <span class="tag">SimConnect</span>
+                <span class="tag">Product Design</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="case-kicker">Applied AI</div>
+              <h3>AI-assisted aviation dispatch workflow</h3>
+              <p>Built an MVP and product thesis for generating structured business-aviation missions, passenger profiles, route logic, and briefing outputs from operating constraints.</p>
+              <div class="tags">
+                <span class="tag">AI Workflows</span>
+                <span class="tag">Python</span>
+                <span class="tag">Product Strategy</span>
+              </div>
             </article>
           </div>
         </div>
@@ -780,83 +1037,73 @@ section {
 
     <section id="writing">
       <div class="container">
-        <div class="section-head">
-          <div class="section-label">Analysis & Writing</div>
-          <h2>Published work and technical communication</h2>
-          <p class="section-lead">Writing is part of the product. I use it to explain systems clearly, evaluate technical tradeoffs, and make specialized topics legible to a broader audience.</p>
+        <div class="section-heading">
+          <div class="section-label">Published Work</div>
+          <div>
+            <h2>Aviation analysis that can be evaluated directly</h2>
+            <p class="section-intro">My FSElite portfolio includes technical reviews, product and market coverage, executive interviews, and field reporting from major industry events.</p>
+          </div>
         </div>
 
-        <div class="writing-grid">
-          <article class="writing-card">
-            <div class="card-kicker">Published Review</div>
-            <h3>Force-feedback hardware analysis for FSElite</h3>
-            <p>Published in-depth technical review work on flight-simulation hardware, focusing on build quality, software behavior, telemetry-driven force feedback, and usability across simulator environments.</p>
-            <div class="project-links">
-              <a class="project-link" href="mailto:martin_harasimowicz@icloud.com?subject=FSElite%20Writing%20Samples">Request writing samples</a>
-            </div>
-          </article>
+        <div class="writing-shell">
+          <div class="writing-summary">
+            <div class="section-label">FSElite</div>
+            <h3>Several hundred thousand cumulative page views</h3>
+            <p>The writing demonstrates technical evaluation, editorial judgment, fast research, and the ability to make specialized aviation topics useful to a demanding audience.</p>
+          </div>
 
-          <article class="writing-card">
-            <div class="card-kicker">What this proves</div>
-            <h3>Technical communication as a differentiator</h3>
-            <p> I can build, assess, and explain systems clearly to users, buyers, readers, or decision-makers.</p>
-          </article>
+          <div class="article-list">
+            <a class="article-link" href="https://fselite.net/content/review-moza-ab6-force-feedback-joystick/" target="_blank" rel="noopener noreferrer">
+              <div>
+                <div class="article-type">Technical Review</div>
+                <div class="article-title">Review: Moza AB6 Force Feedback Joystick</div>
+              </div>
+              <span class="article-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="article-link" href="https://fselite.net/content/moza-mtq-review-throttle-quadrant/" target="_blank" rel="noopener noreferrer">
+              <div>
+                <div class="article-type">Technical Review</div>
+                <div class="article-title">Moza MTQ Review: A Versatile Jet-Focused Throttle Quadrant</div>
+              </div>
+              <span class="article-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="article-link" href="https://fselite.net/content/moza-new-hardware-at-flight-sim-expo-2026/" target="_blank" rel="noopener noreferrer">
+              <div>
+                <div class="article-type">Trade Show Coverage</div>
+                <div class="article-title">Moza Presents New Hardware at FlightSimExpo 2026</div>
+              </div>
+              <span class="article-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact">
       <div class="container">
-        <div class="contact-band">
+        <div class="contact-card">
           <div>
-            <h3>Interested in aviation, technical strategy, or product work?</h3>
-            <p>I am especially interested in roles and projects where analytical depth, systems thinking, research, and practical execution all matter.</p>
+            <div class="section-label">Contact</div>
+            <h2>Looking for someone who can bridge commercial analysis and technical context?</h2>
+            <p>I am open to full-time roles in aviation strategy, market intelligence, product strategy, and commercial operations. Based in Chicago and open to relocation across the United States.</p>
           </div>
-          <div class="hero-actions" style="margin:0;">
-            <a class="btn btn-primary" href="mailto:martin_harasimowicz@icloud.com">Get in touch</a>
-            <a class="btn btn-secondary" href="https://github.com/martinharasimowicz" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:martinharasimowicz@icloud.com">Email Martin</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/martinharasimowicz/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-<footer>
-  <div class="container footer-inner">
-    <div>© 2026 Martin Harasimowicz</div>
-    <div class="footer-links">
-      <div class="email-menu">
-        <button type="button" class="email-trigger" aria-haspopup="true" aria-expanded="false">
-          Email
-        </button>
-
-        <div class="email-popover" role="menu" aria-label="Email options">
-          <a
-            href="mailto:martin_harasimowicz@icloud.com?subject=Portfolio%20Inquiry"
-            class="email-option"
-            role="menuitem"
-          >
-            Open email
-          </a>
-
-          <button
-            type="button"
-            class="email-option email-copy-btn"
-            role="menuitem"
-            onclick="copyEmail(this)"
-          >
-            Click to copy
-          </button>
-        </div>
+  <footer>
+    <div class="container footer-inner">
+      <div>&copy; 2026 Martin Harasimowicz</div>
+      <div class="footer-links">
+        <a href="resume.html">Resume</a>
+        <a href="https://github.com/martinharasimowicz" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:martinharasimowicz@icloud.com">martinharasimowicz@icloud.com</a>
       </div>
-
-      <a href="https://github.com/martinharasimowicz" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/martinharasimowicz/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </div>
-  </div>
-</footer>
-
-     </div>
     </div>
   </footer>
 </body>
